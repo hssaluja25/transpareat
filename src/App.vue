@@ -3,10 +3,21 @@
 </template>
 
 <script>
-import Navbar from '@/components/AppHeader.vue'
+import { auth, onAuthStateChanged } from '@/includes/firebase.config.js'
+import useUserStore from '@/stores/user.js'
+import { mapWritableState } from 'pinia'
 
 export default {
   name: 'App',
-  components: { Navbar }
+  computed: {
+    ...mapWritableState(useUserStore, ['loggedIn'])
+  },
+  created() {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        this.loggedIn = true
+      }
+    })
+  }
 }
 </script>
