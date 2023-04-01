@@ -61,7 +61,7 @@
             >
           </p>
           <button
-            :disabled="show_alert"
+            :disabled="disable_submission"
             @click="signInWithGoogle()"
             aria-label="Continue with google"
             role="button"
@@ -195,9 +195,11 @@
               </div>
               <ErrorMessage class="text-red-600" name="password"></ErrorMessage>
             </div>
+
             <!-- Alert box -->
             <div v-if="show_alert" class="alert shadow-lg mt-8" :class="bg_color">
               <div>
+                <!-- Info icon -->
                 <svg
                   v-if="bg_color === 'alert-info'"
                   xmlns="http://www.w3.org/2000/svg"
@@ -212,6 +214,7 @@
                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                   ></path>
                 </svg>
+                <!-- Success icon -->
                 <svg
                   v-else-if="bg_color === 'alert-success'"
                   xmlns="http://www.w3.org/2000/svg"
@@ -227,6 +230,7 @@
                   />
                 </svg>
 
+                <!-- Error icon -->
                 <svg
                   v-else
                   xmlns="http://www.w3.org/2000/svg"
@@ -244,7 +248,12 @@
 
                 <span>{{ alert_msg }}</span>
               </div>
+              <!-- Retry button -->
+              <div class="flex-none" v-if="bg_color == 'alert-error'">
+                <button class="btn btn-sm">Retry</button>
+              </div>
             </div>
+
             <!-- Login button -->
             <div v-else class="mt-8">
               <button
@@ -309,6 +318,8 @@ export default {
       selected: false,
       // When user clicks on the login button on the form page, show alert and disable (or hide) button
       show_alert: false,
+      // Separate show_alert and disable_button properties because it is not necessary that these will have the same values all the time. Example in case of error, show_alert would be true but disable_button would be false
+      disable_submission: false,
       // On success or error change the bg color
       bg_color: 'alert-info',
       // On success or error, change the message shown in the alert box
@@ -328,6 +339,7 @@ export default {
     async signInWithGoogle() {
       try {
         this.show_alert = true
+        this.disable_submission = true
         const docId = await this.continueWithGoogle()
         const hasPermissions = await checkFirestore(this.role, docId)
         console.log(hasPermissions)
@@ -351,11 +363,15 @@ export default {
           this.alert_msg = 'There was an unexpected error. Please try again.'
         }
         this.bg_color = 'alert-error'
+        this.disable_submission = false
       }
     },
     async loginWithEmail(values) {
       try {
         this.show_alert = true
+        this.disable_submission = true
+        this.alert_msg = 'Logging you in'
+        this.bg_color = 'alert-info'
         const docId = await this.signInWithEmail(values)
         const hasPermissions = await checkFirestore(this.role, docId)
         console.log(`hasPermissions: ${hasPermissions}`)
@@ -381,6 +397,7 @@ export default {
           this.alert_msg = 'There was an unexpected error. Please try again.'
         }
         this.bg_color = 'alert-error'
+        this.disable_submission = false
       }
     }
   },

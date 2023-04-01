@@ -49,7 +49,7 @@
             Create an account
           </p>
           <button
-            :disabled="show_alert"
+            :disabled="disable_submission"
             @click="registerWithGoogle()"
             aria-label="Continue with google"
             role="button"
@@ -290,6 +290,10 @@
 
                 <span>{{ alert_msg }}</span>
               </div>
+              <!-- Retry button -->
+              <div class="flex-none" v-if="bg_color == 'alert-error'">
+                <button class="btn btn-sm">Retry</button>
+              </div>
             </div>
             <!-- Login button -->
             <div v-else class="mt-8">
@@ -357,6 +361,8 @@ export default {
       selected: false,
       // When user clicks on the login button on the form page, show alert and disable (or hide) button
       show_alert: false,
+      // Separate show_alert and disable_button properties because it is not necessary that these will have the same values all the time. Example in case of error, show_alert would be true but disable_button would be false
+      disable_submission: false,
       // On success or error change the bg color
       bg_color: 'alert-info',
       // On success or error, change the message shown in the alert box
@@ -376,6 +382,7 @@ export default {
     async registerWithGoogle() {
       try {
         this.show_alert = true
+        this.disable_submission = true
         const docId = await this.continueWithGoogle()
         await addToFirestore(this.role, docId)
         this.loggedIn = true
@@ -386,11 +393,13 @@ export default {
         console.log(error)
         this.alert_msg = 'There was an unexpected error. Please try again.'
         this.bg_color = 'alert-error'
+        this.disable_submission = false
       }
     },
     async createWithEmail(values) {
       try {
         this.show_alert = true
+        this.disable_submission = true
         const docId = await this.createUserWithEmail(values)
         await addToFirestore(this.role, docId)
         this.loggedIn = true
@@ -401,6 +410,7 @@ export default {
         console.log(error)
         this.alert_msg = 'There was an unexpected error. Please try again.'
         this.bg_color = 'alert-error'
+        this.disable_submission = false
       }
     }
   }
