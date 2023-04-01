@@ -316,10 +316,11 @@ export default {
     }
   },
   computed: {
+    ...mapWritableState(useUserStore, ['loggedIn']),
     ...mapWritableState(useRoleStore, ['role'])
   },
   methods: {
-    ...mapActions(useUserStore, ['continueWithGoogle', 'createUserWithEmail', 'signInWithEmail']),
+    ...mapActions(useUserStore, ['continueWithGoogle', 'signInWithEmail', 'signOutUser']),
     pressedLogin(role) {
       this.selected = true
       this.role = role
@@ -331,8 +332,11 @@ export default {
         const hasPermissions = await checkFirestore(this.role, docId)
         console.log(hasPermissions)
         if (!hasPermissions) {
+          // signing out st when the user refreshes, loggedIn is not true
+          await this.signOutUser()
           throw new Error("The user doesn't have the correct access permisssions")
         }
+        this.loggedIn = true
         this.alert_msg = 'Logged in successfully'
         this.bg_color = 'alert-success'
         this.$router.push({ name: 'home' })
@@ -353,10 +357,14 @@ export default {
       try {
         this.show_alert = true
         const docId = await this.signInWithEmail(values)
-        const hasPermissions = checkFirestore(this.role, docId)
+        const hasPermissions = await checkFirestore(this.role, docId)
+        console.log(`hasPermissions: ${hasPermissions}`)
         if (!hasPermissions) {
+          // signing out st when the user refreshes, loggedIn is not true
+          await this.signOutUser()
           throw new Error("The user doesn't have the correct access permisssions")
         }
+        this.loggedIn = true
         this.alert_msg = 'Logged in successfully'
         this.bg_color = 'alert-success'
         this.$router.push({ name: 'home' })
@@ -367,6 +375,8 @@ export default {
           this.alert_msg = `This user is not a ${this.role}`
         } else if (error.code === 'auth/user-not-found') {
           this.alert_msg = "Account doesn't exist"
+        } else if (error.code === 'auth/wrong-password') {
+          this.alert_msg = 'Invalid credentials'
         } else {
           this.alert_msg = 'There was an unexpected error. Please try again.'
         }

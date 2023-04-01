@@ -14,7 +14,7 @@
             accountability in the food supply chain.
           </p>
           <div class="card-actions justify-end">
-            <button @click="pressedLogin('consumer')" class="btn btn-primary">Register</button>
+            <button @click="pressedRegister('consumer')" class="btn btn-primary">Register</button>
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@
             operations and improve your bottom line.
           </p>
           <div class="card-actions justify-end">
-            <button @click="pressedLogin('manager')" class="btn btn-primary">Register</button>
+            <button @click="pressedRegister('manager')" class="btn btn-primary">Register</button>
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@
           </p>
           <button
             :disabled="show_alert"
-            @click="signInWithGoogle()"
+            @click="registerWithGoogle()"
             aria-label="Continue with google"
             role="button"
             class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 p-3 border rounded-lg border-gray-700 flex items-center w-full mt-5 hover:bg-gray-100"
@@ -107,7 +107,7 @@
             <p class="text-base font-medium leading-4 px-2.5 text-gray-500">OR</p>
             <hr class="w-full bg-gray-400" />
           </div>
-          <vee-form @submit="loginWithEmail">
+          <vee-form @submit="createWithEmail">
             <!-- Email div -->
             <div>
               <label for="email" class="text-sm font-medium leading-none text-gray-800">
@@ -343,7 +343,7 @@
 import { mapActions, mapWritableState } from 'pinia'
 import useUserStore from '@/stores/user.js'
 import useRoleStore from '@/stores/role.js'
-import { checkFirestore } from '@/includes/firestore.js'
+import { addToFirestore } from '@/includes/firestore.js'
 
 export default {
   name: 'LoginView',
@@ -360,64 +360,46 @@ export default {
       // On success or error change the bg color
       bg_color: 'alert-info',
       // On success or error, change the message shown in the alert box
-      alert_msg: 'Logging you in'
+      alert_msg: 'Creating your account...'
     }
   },
   computed: {
     ...mapWritableState(useRoleStore, ['role'])
   },
   methods: {
-    ...mapActions(useUserStore, ['continueWithGoogle', 'createUserWithEmail', 'signInWithEmail']),
-    pressedLogin(role) {
+    ...mapActions(useUserStore, ['continueWithGoogle', 'createUserWithEmail']),
+    pressedRegister(role) {
       this.selected = true
+      // Sets role in central storage to whatever value was selected on the first screen
       this.role = role
     },
-    async signInWithGoogle() {
+    async registerWithGoogle() {
       try {
         this.show_alert = true
         const docId = await this.continueWithGoogle()
-        const hasPermissions = await checkFirestore(this.role, docId)
-        console.log(hasPermissions)
-        if (!hasPermissions) {
-          throw new Error("The user doesn't have the correct access permisssions")
-        }
-        this.alert_msg = 'Logged in successfully'
+        await addToFirestore(this.role, docId)
+        this.loggedIn = true
+        this.alert_msg = 'Account created successfully'
         this.bg_color = 'alert-success'
         this.$router.push({ name: 'home' })
       } catch (error) {
-        const errorMessage = error.message
-        console.log(error.code)
-        if (errorMessage == "The user doesn't have the correct access permisssions") {
-          this.alert_msg = `This user is not a ${this.role}`
-        } else if (error.code === 'auth/user-not-found') {
-          this.alert_msg = "Account doesn't exist"
-        } else {
-          this.alert_msg = 'There was an unexpected error. Please try again.'
-        }
+        console.log(error)
+        this.alert_msg = 'There was an unexpected error. Please try again.'
         this.bg_color = 'alert-error'
       }
     },
-    async loginWithEmail(values) {
+    async createWithEmail(values) {
       try {
         this.show_alert = true
-        const docId = await this.signInWithEmail(values)
-        const hasPermissions = checkFirestore(this.role, docId)
-        if (!hasPermissions) {
-          throw new Error("The user doesn't have the correct access permisssions")
-        }
-        this.alert_msg = 'Logged in successfully'
+        const docId = await this.createUserWithEmail(values)
+        await addToFirestore(this.role, docId)
+        this.loggedIn = true
+        this.alert_msg = 'Account created successfully'
         this.bg_color = 'alert-success'
         this.$router.push({ name: 'home' })
       } catch (error) {
-        const errorMessage = error.message
-        console.log(error.code)
-        if (errorMessage == "The user doesn't have the correct access permisssions") {
-          this.alert_msg = `This user is not a ${this.role}`
-        } else if (error.code === 'auth/user-not-found') {
-          this.alert_msg = "Account doesn't exist"
-        } else {
-          this.alert_msg = 'There was an unexpected error. Please try again.'
-        }
+        console.log(error)
+        this.alert_msg = 'There was an unexpected error. Please try again.'
         this.bg_color = 'alert-error'
       }
     }

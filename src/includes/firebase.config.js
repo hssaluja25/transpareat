@@ -1,5 +1,5 @@
 import firebase from 'firebase/compat/app'
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
+import { deleteUser, getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { getFirestore, getDoc, doc, setDoc } from "firebase/firestore";
 
 
@@ -20,5 +20,5 @@ const db = getFirestore(app);
 
 
 export {
-    auth, provider, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, db, getDoc, doc, setDoc, onAuthStateChanged
+    auth, provider, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, db, getDoc, doc, setDoc, deleteUser, signOut
 }
