@@ -383,6 +383,17 @@ export default {
         this.bg_color = 'alert-error'
       }
     }
+  },
+  beforeRouteEnter(to, from, next) {
+    console.log('Login route')
+    const store = useUserStore()
+    if (!store.loggedIn) {
+      // If user is not logged in, allow them to proceed to login route
+      next()
+    } else {
+      // If user is already logged in, they should be routed to the home page
+      next({ name: 'home' })
+    }
   }
 }
 </script>
