@@ -10,6 +10,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.5.3",
     "@vee-validate/rules": "^4.8.4",
     "daisyui": "^2.51.5",
     "firebase": "^9.18.0",
