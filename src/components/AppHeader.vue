@@ -78,7 +78,7 @@
 
     <div v-if="showLoginButton" class="navbar-end space-x-2 sm:space-x-4">
       <router-link :to="{ name: 'login' }" class="btn">Sign In</router-link>
-      <a class="btn btn-secondary">Register</a>
+      <router-link :to="{ name: 'register' }" class="btn btn-secondary">Register</router-link>
     </div>
     <div v-else class="flex items-center justify-end navbar-end space-x-2 sm:space-x-4">
       <div class="flex items-center gap-4">

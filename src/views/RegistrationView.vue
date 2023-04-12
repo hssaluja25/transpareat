@@ -370,7 +370,8 @@ export default {
     }
   },
   computed: {
-    ...mapWritableState(useRoleStore, ['role'])
+    ...mapWritableState(useRoleStore, ['role']),
+    ...mapWritableState(useUserStore, ['loggedIn'])
   },
   methods: {
     ...mapActions(useUserStore, ['continueWithGoogle', 'createUserWithEmail']),

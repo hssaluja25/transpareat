@@ -402,7 +402,6 @@ export default {
     }
   },
   beforeRouteEnter(to, from, next) {
-    console.log('Login route')
     const store = useUserStore()
     if (!store.loggedIn) {
       // If user is not logged in, allow them to proceed to login route
