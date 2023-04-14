@@ -1,35 +1,19 @@
 <template>
-  <section>
+  <section v-if="img != null">
     <div class="relative mx-auto max-w-screen-xl px-4 py-8">
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <!-- Images to the left -->
         <div class="grid grid-cols-2 gap-4 md:grid-cols-1">
-          <img alt="Les Paul" :src="img[0]" class="aspect-square w-full rounded-xl object-cover" />
+          <img :src="img[0]" class="aspect-square w-full rounded-xl object-cover" />
 
           <div class="grid grid-cols-2 gap-4 lg:mt-4">
-            <img
-              alt="Les Paul"
-              :src="img[1]"
-              class="aspect-square w-full rounded-xl object-cover"
-            />
+            <img :src="img[1]" class="aspect-square w-full rounded-xl object-cover" />
 
-            <img
-              alt="Les Paul"
-              :src="img[2]"
-              class="aspect-square w-full rounded-xl object-cover"
-            />
+            <img :src="img[2]" class="aspect-square w-full rounded-xl object-cover" />
 
-            <img
-              alt="Les Paul"
-              :src="img[3]"
-              class="aspect-square w-full rounded-xl object-cover"
-            />
+            <img :src="img[3]" class="aspect-square w-full rounded-xl object-cover" />
 
-            <img
-              alt="Les Paul"
-              :src="img[4]"
-              class="aspect-square w-full rounded-xl object-cover"
-            />
+            <img :src="img[4]" class="aspect-square w-full rounded-xl object-cover" />
           </div>
         </div>
 
@@ -673,7 +657,8 @@
 <script>
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import { ChevronUpIcon } from '@heroicons/vue/20/solid'
-import { mapState } from 'pinia'
+import { mapWritableState } from 'pinia'
+import { db, getDoc, doc } from '@/includes/firebase.config.js'
 import useProductStore from '@/stores/product.js'
 import AppFooter from '@/components/AppFooter.vue'
 
@@ -686,7 +671,46 @@ export default {
     ChevronUpIcon,
     AppFooter
   },
-  created() {
+  async created() {
+    // Fetch product details
+    const docRef = doc(db, 'product-description', 'organic-milk')
+    const docSnap = await getDoc(docRef)
+    if (docSnap.exists()) {
+      const productName = docSnap.data()['name']
+      this.name = productName
+      const unit = docSnap.data()['unit']
+      this.unit = unit
+      const description = docSnap.data()['description']
+      this.description = description
+      const price = docSnap.data()['price']
+      this.price = price
+      const img = docSnap.data()['img']
+      this.img = img
+      const origin = docSnap.data()['origin']
+      this.origin = origin
+      const originInfo = docSnap.data()['originInfo']
+      this.originInfo = originInfo
+      const productionDate = docSnap.data()['productionDate']
+      this.productionDate = productionDate
+      const certifications = docSnap.data()['certifications']
+      this.certifications = certifications
+      const testingResults = docSnap.data()['testingResults']
+      this.testingResults = testingResults
+      const farmingPractices = docSnap.data()['farmingPractices']
+      this.farmingPractices = farmingPractices
+      const processingInformation = docSnap.data()['processingInformation']
+      this.processingInformation = processingInformation
+      const transportation = docSnap.data()['transportation']
+      this.transportation = transportation
+      const storageDetails = docSnap.data()['storageDetails']
+      this.storageDetails = storageDetails
+      const reviews = docSnap.data()['reviews']
+      this.reviews = reviews
+    } else {
+      console.log('Could not fetch product(milk) details from firestore')
+      // Route to error page (not 404 page) OR should i display an error component on the current page? The latter seems more logical.
+    }
+    // Logic for displaying tooltip of certifications
     this.showCertificationInfo = new Array(Object.keys(this.certifications).length)
     this.showCertificationInfo.fill(false)
   },
@@ -696,7 +720,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(useProductStore, [
+    ...mapWritableState(useProductStore, [
       'certifications',
       'description',
       'img',
