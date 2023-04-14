@@ -15,10 +15,12 @@ coverage
 *.local
 
 uploadMilkDescription.js
+uploadAnchoviesDescription.js
 uploadMeat.js
 uploadDairy.js
 uploadOrganic.js
 uploadSeafood.js
+vercel.json
 
 /cypress/videos/
 /cypress/screenshots/

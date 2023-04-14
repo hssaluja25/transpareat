@@ -146,7 +146,7 @@
 
               <div class="stat">
                 <div class="stat-title">Origin</div>
-                <div class="stat-value">{{ origin }}</div>
+                <div class="stat-value" :style="{ 'white-space': 'normal' }">{{ origin }}</div>
                 <div class="stat-actions">
                   <!-- The button to open modal -->
                   <label for="my-modal" class="btn btn-sm">More info</label>
@@ -663,7 +663,7 @@ import useProductStore from '@/stores/product.js'
 import AppFooter from '@/components/AppFooter.vue'
 
 export default {
-  name: 'MilkView',
+  name: 'ProductView',
   components: {
     Disclosure,
     DisclosureButton,
@@ -672,8 +672,9 @@ export default {
     AppFooter
   },
   async created() {
+    const productId = this.$route.query.id
     // Fetch product details
-    const docRef = doc(db, 'product-description', 'organic-milk')
+    const docRef = doc(db, 'product-description', productId)
     const docSnap = await getDoc(docRef)
     if (docSnap.exists()) {
       const productName = docSnap.data()['name']
@@ -707,7 +708,7 @@ export default {
       const reviews = docSnap.data()['reviews']
       this.reviews = reviews
     } else {
-      console.log('Could not fetch product(milk) details from firestore')
+      console.log('Could not fetch product details from firestore')
       // Route to error page (not 404 page) OR should i display an error component on the current page? The latter seems more logical.
     }
     // Logic for displaying tooltip of certifications

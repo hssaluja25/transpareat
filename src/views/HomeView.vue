@@ -47,7 +47,10 @@
                 :key="sf"
                 style="flex: 0 0 auto; width: calc(100% / 2 - 2rem); margin-right: 2rem"
               >
-                <a href="#" class="block group">
+                <router-link
+                  :to="{ name: 'products', query: { id: sf['query'] } }"
+                  class="block group"
+                >
                   <img :src="sf['img']" alt="" class="object-cover w-full rounded aspect-square" />
 
                   <div class="mt-3">
@@ -61,7 +64,7 @@
                       ${{ sf['price'] }} - {{ sf['quantity'] }}
                     </p>
                   </div>
-                </a>
+                </router-link>
               </li>
             </ul>
           </div>
@@ -91,7 +94,10 @@
             class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-3"
           >
             <li>
-              <a href="#" class="relative block group">
+              <router-link
+                :to="{ name: 'products', query: { id: organic[time]['query'] } }"
+                class="relative block group"
+              >
                 <img
                   :src="organic[time]['img']"
                   alt=""
@@ -107,11 +113,14 @@
                     Shop Now
                   </span>
                 </div>
-              </a>
+              </router-link>
             </li>
 
             <li>
-              <a href="#" class="relative block group">
+              <router-link
+                :to="{ name: 'products', query: { id: organic[time + 1]['query'] } }"
+                class="relative block group"
+              >
                 <img
                   :src="organic[time + 1]['img']"
                   alt=""
@@ -127,11 +136,14 @@
                     Shop Now
                   </span>
                 </div>
-              </a>
+              </router-link>
             </li>
 
             <li class="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
-              <a href="#" class="relative block group">
+              <router-link
+                :to="{ name: 'products', query: { id: organic[time + 2]['query'] } }"
+                class="relative block group"
+              >
                 <img
                   :src="organic[time + 2]['img']"
                   alt=""
@@ -147,7 +159,7 @@
                     Shop Now
                   </span>
                 </div>
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>
@@ -197,7 +209,10 @@
                 :key="product"
                 style="flex: 0 0 auto; width: calc(100% / 2 - 2rem); margin-right: 2rem"
               >
-                <a href="#" class="block group">
+                <router-link
+                  :to="{ name: 'products', query: { id: product['query'] } }"
+                  class="block group"
+                >
                   <img
                     :src="product['img']"
                     alt=""
@@ -215,7 +230,7 @@
                       ${{ product['price'] }} - {{ product['quantity'] }}
                     </p>
                   </div>
-                </a>
+                </router-link>
               </li>
             </ul>
           </div>
@@ -243,7 +258,10 @@
         <div v-if="dairy">
           <ul class="grid grid-cols-1 gap-4 mt-8 lg:grid-cols-3">
             <li>
-              <a href="#" class="relative block group">
+              <router-link
+                :to="{ name: 'products', query: { id: dairy[0]['query'] } }"
+                class="relative block group"
+              >
                 <img
                   :src="dairy[0]['img']"
                   alt=""
@@ -259,11 +277,15 @@
                     Shop Now
                   </span>
                 </div>
-              </a>
+              </router-link>
             </li>
 
             <li>
-              <a href="#" class="relative block group">
+              <router-link
+                :to="{ name: 'products', query: { id: dairy[1]['query'] } }"
+                href="#"
+                class="relative block group"
+              >
                 <img
                   :src="dairy[1]['img']"
                   alt=""
@@ -279,11 +301,14 @@
                     Shop Now
                   </span>
                 </div>
-              </a>
+              </router-link>
             </li>
 
             <li class="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
-              <a href="#" class="relative block group">
+              <router-link
+                :to="{ name: 'products', query: { id: dairy[2]['query'] } }"
+                class="relative block group"
+              >
                 <img
                   :src="dairy[2]['img']"
                   alt=""
@@ -299,7 +324,7 @@
                     Shop Now
                   </span>
                 </div>
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>

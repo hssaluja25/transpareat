@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import LoginView from '@/views/LoginView.vue'
-import MilkView from '@/views/MilkView.vue'
+import ProductView from '@/views/ProductView.vue'
 import RegistrationView from '@/views/RegistrationView.vue'
 
 const router = createRouter({
@@ -23,11 +23,17 @@ const router = createRouter({
       component: RegistrationView,
     },
     {
-      name: 'milk',
-      path: '/milk',
-      component: MilkView,
+      name: 'products',
+      path: '/products',
+      component: ProductView,
     },
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    // return desired position
+    // Here to and from is same as navigation guards
+    // always scroll to top
+    return { top: 0 }
+  }
 })
 
 export default router
