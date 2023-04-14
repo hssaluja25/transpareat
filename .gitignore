@@ -20,7 +20,6 @@ uploadMeat.js
 uploadDairy.js
 uploadOrganic.js
 uploadSeafood.js
-vercel.json
 
 /cypress/videos/
 /cypress/screenshots/
