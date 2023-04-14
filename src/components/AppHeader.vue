@@ -70,7 +70,7 @@
           </a>
           <ul class="p-2">
             <li><a>Notification Preferences</a></li>
-            <li><a>Sign Out</a></li>
+            <li><div @click="signOut()">Sign Out</div></li>
           </ul>
         </li>
       </ul>
@@ -150,16 +150,23 @@
 </template>
 
 <script>
-import { mapState } from 'pinia'
+import { mapWritableState, mapActions } from 'pinia'
 import useUserStore from '@/stores/user.js'
 
 export default {
   name: 'NavBar',
   computed: {
-    ...mapState(useUserStore, ['loggedIn']),
+    ...mapWritableState(useUserStore, ['loggedIn']),
     showLoginButton() {
       if (this.loggedIn) return false
       else return true
+    }
+  },
+  methods: {
+    ...mapActions(useUserStore, ['signOutUser']),
+    async signOut() {
+      await this.signOutUser()
+      this.loggedIn = false
     }
   }
 }
