@@ -14,8 +14,9 @@ dist-ssr
 coverage
 *.local
 
-uploadMilkDescription.js
 uploadAnchoviesDescription.js
+uploadCaviarDescription.js
+uploadMilkDescription.js
 uploadMeat.js
 uploadDairy.js
 uploadOrganic.js
