@@ -1,5 +1,6 @@
 <template>
   <div class="navbar bg-base-100">
+    <!-- The App Logo -->
     <div class="navbar-start">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -24,7 +25,7 @@
         >
           <li><a>Track</a></li>
           <li><a>Become a Seller</a></li>
-          <li><a>About Us</a></li>
+          <li><router-link :to="{ name: 'about' }">About Us</router-link></li>
           <li tabindex="0">
             <a class="justify-between">
               More
@@ -45,16 +46,21 @@
           </li>
         </ul>
       </div>
-      <a class="btn btn-ghost normal-case text-xl inline-flex items-center gap-4">
+      <router-link
+        :to="{ name: 'home' }"
+        class="btn btn-ghost normal-case text-xl inline-flex items-center gap-4"
+      >
         <img class="h-9 w-auto" src="@/assets/images/icon.png" />
         <span class="hidden sm:inline-block">Transpareat</span>
-      </a>
+      </router-link>
     </div>
+
+    <!-- The links on navbar -->
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
         <li><a>Track</a></li>
         <li><a>Become a Seller</a></li>
-        <li><a>About Us</a></li>
+        <li><router-link :to="{ name: 'about' }">About Us</router-link></li>
         <li tabindex="0">
           <a>
             More
@@ -76,6 +82,8 @@
       </ul>
     </div>
 
+    <!-- The login/register buttons if user is not logged in -->
+    <!-- Search box and profile if user is logged in -->
     <div v-if="showLoginButton" class="navbar-end space-x-2 sm:space-x-4">
       <router-link :to="{ name: 'login' }" class="btn">Sign In</router-link>
       <router-link :to="{ name: 'register' }" class="btn btn-secondary">Register</router-link>
