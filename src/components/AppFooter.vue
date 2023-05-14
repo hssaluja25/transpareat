@@ -13,10 +13,15 @@
     <div class="px-4 pt-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div class="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
         <div class="md:max-w-md lg:col-span-2">
-          <a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">
+          <router-link
+            :to="{ name: 'home' }"
+            aria-label="Go home"
+            title="Transpareat"
+            class="inline-flex items-center"
+          >
             <img src="@/assets/images/icon.svg" height="50" width="50" />
             <span class="ml-2 text-xl font-bold tracking-wide text-black-100">Transpareat</span>
-          </a>
+          </router-link>
           <div class="mt-4 lg:max-w-sm">
             <p class="text-sm text-deep-purple-50">
               We are a blockchain-based platform that enables end-to-end traceability of food

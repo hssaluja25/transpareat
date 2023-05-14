@@ -130,7 +130,7 @@
 
     <!-- Features -->
     <div class="hero min-h-screen">
-      <div class="hero-content flex-col lg:flex-row-reverse">
+      <div class="hero-content flex-col lg:flex-row-reverse -ml-12">
         <div>
           <h1 class="ml-5 text-5xl font-bold">Revolutionizing the Food Supply Chain</h1>
           <p class="py-6 ml-5">
@@ -142,7 +142,10 @@
             <router-link :to="{ name: 'home' }"> Take a Look</router-link>
           </button>
         </div>
-        <img src="@/assets/images/about/features.webp" class="max-w-2xl rounded-lg shadow-2xl" />
+        <img
+          src="@/assets/images/about/features.webp"
+          class="max-w-2xl rounded-lg shadow-2xl mr-5"
+        />
       </div>
     </div>
 

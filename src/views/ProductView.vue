@@ -1,4 +1,5 @@
 <template>
+  <nav-bar></nav-bar>
   <div v-if="img != null">
     <section>
       <div class="relative mx-auto max-w-screen-xl px-4 py-8">
@@ -77,6 +78,7 @@
 
                     <span
                       class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white"
+                      @click="quantitySelected = true"
                     >
                       lb
                     </span>
@@ -87,6 +89,7 @@
 
                     <span
                       class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white"
+                      @click="quantitySelected = true"
                     >
                       Oz
                     </span>
@@ -99,6 +102,7 @@
 
                     <span
                       class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white"
+                      @click="quantitySelected = true"
                     >
                       L
                     </span>
@@ -110,12 +114,34 @@
 
                     <span
                       class="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white"
+                      @click="quantitySelected = true"
                     >
                       Dozen
                     </span>
                   </label>
                 </div>
               </fieldset>
+
+              <div
+                v-if="displayError"
+                class="flex items-center p-6 space-x-4 rounded-md bg-gray-50 text-gray-800"
+              >
+                <div class="flex items-center self-stretch justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-7 h-7"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+                <span>{{ errorMsg }}</span>
+              </div>
 
               <div class="mt-8 flex gap-4">
                 <div>
@@ -125,14 +151,20 @@
                     type="number"
                     id="quantity"
                     min="1"
-                    value="1"
+                    v-model="quantity"
                     class="w-12 rounded border-gray-200 py-3 text-center text-xs [-moz-appearance:_textfield] [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
 
                 <button
-                  type="submit"
                   class="block rounded bg-green-600 px-5 py-3 text-xs font-medium text-white hover:bg-green-500"
+                  @click.prevent="runChecks('buy')"
+                >
+                  Buy Now
+                </button>
+                <button
+                  class="block rounded bg-blue-600 px-5 py-3 text-xs font-medium text-white hover:bg-blue-500"
+                  @click.prevent="runChecks('cart')"
                 >
                   Add to Cart
                 </button>
@@ -659,12 +691,14 @@
 </template>
 
 <script>
+import NavBar from '@/components/AppHeader.vue'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
 import { ChevronUpIcon } from '@heroicons/vue/20/solid'
 import { mapWritableState } from 'pinia'
 import { db, getDoc, doc } from '@/includes/firebase.config.js'
 import useProductStore from '@/stores/product.js'
 import AppFooter from '@/components/AppFooter.vue'
+import useUserStore from '@/stores/user.js'
 
 export default {
   name: 'ProductView',
@@ -673,7 +707,8 @@ export default {
     DisclosureButton,
     DisclosurePanel,
     ChevronUpIcon,
-    AppFooter
+    AppFooter,
+    NavBar
   },
   async created() {
     const productId = this.$route.query.id
@@ -721,7 +756,12 @@ export default {
   },
   data() {
     return {
-      showCertificationInfo: []
+      quantity: 1,
+      showCertificationInfo: [],
+      quantitySelected: false,
+      // If add to cart is clicked without selecting quantity, then an error is shown
+      displayError: false,
+      errorMsg: ''
     }
   },
   computed: {
@@ -742,6 +782,7 @@ export default {
       'transportation',
       'unit'
     ]),
+    ...mapWritableState(useUserStore, ['loggedIn']),
     rating() {
       let sum = 0
       for (let i = 0; i < this.reviews.length; i++) {
@@ -828,6 +869,46 @@ export default {
       var aDay = 24 * 60 * 60 * 1000
       const hey = timeSince(new Date(d - aDay))
       return hey
+    },
+    async runChecks(intent) {
+      if (this.loggedIn) {
+        if (this.quantitySelected) {
+          if (intent === 'buy') {
+            try {
+              // Instead of this the stripe page should open so i need to make a post request to it. However, if i make a post request (using fetch), will the stripe page open? I was thinking that only the data would be posted and a new webpage won't open
+              const response = await fetch('https://transpareat-server.onrender.com/checkout', {
+                method: 'POST',
+                body: JSON.stringify({
+                  name: this.name,
+                  price: this.price,
+                  img: this.img[0],
+                  quantity: this.quantity
+                }),
+                headers: {
+                  'Content-type': 'application/json; charset=UTF-8'
+                }
+              })
+              const body = await response.json()
+              window.location.href = body.url
+            } catch (e) {
+              console.log(`Error from server: ${e}`)
+            }
+          } else if (intent === 'cart') {
+            console.log('Added to cart')
+          }
+        } else {
+          // Tell the user to select unit
+          this.errorMsg = 'Please select quantity'
+          this.displayError = true
+        }
+      } else {
+        this.errorMsg = 'You need to be logged in to perform this action'
+        this.displayError = true
+      }
+      // We only have to display error message when
+      // 1. User has not selected quantity
+      // 2. User has clicked on add to cart
+      // We do not display error when user has not selected quantity but has also not clicked on the Add to Cart button
     }
   }
 }
