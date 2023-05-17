@@ -1,8 +1,14 @@
+<!-- <img src="@/assets/images/cart/1.png" />
+<img src="@/assets/images/cart/2.png" />
+<img src="@/assets/images/cart/3.png" width="180px" height="180px" />
+<img src="@/assets/images/cart/4.png" /> 
+<img src="@/assets/images/cart/5.png" /> -->
+
 <template>
   <nav-bar></nav-bar>
 
   <div class="h-screen pt-20">
-    <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
+    <h1 class="-mt-7 mb-12 text-center text-4xl font-bold">Cart Items</h1>
     <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
       <!-- Left section containing items -->
       <div class="rounded-lg md:w-2/3">

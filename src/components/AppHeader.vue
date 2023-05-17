@@ -156,7 +156,7 @@
           <li><a>Item 1</a></li>
           <li><a>Item 2</a></li>
           <li>
-            <a> <router-link :to="{ name: 'cart' }"> Go to cart</router-link></a>
+            <router-link :to="{ name: 'cart' }"> Go to cart</router-link>
           </li>
         </ul>
       </div>

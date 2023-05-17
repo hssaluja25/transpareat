@@ -3,7 +3,7 @@
 
   <main>
     <!-- Hero image in the bg -->
-    <div class="hero min-h-screen" style="background-image: url(src/assets/images/about/chef.webp)">
+    <div class="hero min-h-screen" style="background-image: url(@/assets/images/about/chef.webp)">
       <div class="hero-overlay bg-opacity-60"></div>
       <div class="hero-content text-center text-neutral-content">
         <div class="max-w-4xl">
