@@ -3,26 +3,17 @@
 
   <main>
     <!-- Hero image in the bg -->
-    <div
-      class="hero min-h-screen"
-      :style="{ backgroundImage: 'url(src/assets/images/about/chef.webp)' }"
-    >
-      <div class="hero-overlay bg-opacity-60"></div>
+    <div class="hero min-h-screen" :style="{ backgroundImage: 'url(' + 'images/chef.webp' + ')' }">
+      <div class="about-hero-bg hero-overlay"></div>
       <div class="hero-content text-center text-neutral-content">
         <div class="max-w-4xl">
           <h1 class="mb-9 text-5xl font-bold">Trace Your Food from Farm to Table</h1>
           <p class="bg-opacity-50 text-2xl mb-5">
-            Welcome to our food traceability web app! We believe that everyone deserves to know
-            where their food comes from and how it's produced. With our app, you can trace your food
-            products from the farm to your table, and feel confident in the quality and
-            sustainability of the food you're eating. Our app uses blockchain technology to provide
-            a secure and transparent ledger of every transaction made in the food supply chain. This
-            means that you can track your food products with confidence, and know that the
-            information you're seeing is accurate and up-to-date. So why wait? Start tracing your
-            food today and join us in our mission to create a more sustainable and transparent food
-            system.
+            We believe that everyone deserves to know where their food comes from and how it's
+            produced. So why wait? Start tracing your food today and join us in our mission to
+            create a more sustainable and transparent food system.
           </p>
-          <button class="btn btn-primary">
+          <button class="mt-8 btn btn-primary">
             <router-link :to="{ name: 'home' }"> Get Started</router-link>
           </button>
         </div>
