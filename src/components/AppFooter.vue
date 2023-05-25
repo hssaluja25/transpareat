@@ -36,114 +36,100 @@
         </div>
         <div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
           <div>
-            <p class="font-semibold tracking-wide text-teal-accent-400">Category</p>
+            <p class="font-semibold tracking-wide text-teal-accent-400">Platform</p>
             <ul class="mt-2 space-y-2">
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >News</a
+                  >Overview</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >World</a
+                  >Features</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Games</a
+                  >Use Cases</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >References</a
+                  >Testimonials</a
                 >
               </li>
             </ul>
           </div>
           <div>
-            <p class="font-semibold tracking-wide text-teal-accent-400">Cherry</p>
+            <p class="font-semibold tracking-wide text-teal-accent-400">Traceability</p>
             <ul class="mt-2 space-y-2">
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Web</a
+                  >Farm to Table Process</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >eCommerce</a
+                  >Blockchain Technology</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Business</a
+                  >Supply Chain Visibility</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Entertainment</a
+                  >Food Safety and Quality</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Portfolio</a
+                  >Sustainability Initiatives</a
                 >
               </li>
             </ul>
           </div>
           <div>
-            <p class="font-semibold tracking-wide text-teal-accent-400">Apples</p>
+            <p class="font-semibold tracking-wide text-teal-accent-400">Resources</p>
             <ul class="mt-2 space-y-2">
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Media</a
+                  >Guides</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Brochure</a
+                  >FAQs</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Nonprofit</a
+                  >Case Studies</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Educational</a
+                  >Video Tutorials</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Projects</a
+                  >Support</a
                 >
               </li>
             </ul>
@@ -153,30 +139,26 @@
             <ul class="mt-2 space-y-2">
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Infopreneur</a
+                  >About Us</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Personal</a
+                  >Team</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Wiki</a
+                  >Partnerships</a
                 >
               </li>
               <li>
                 <a
-                  href="/"
                   class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                  >Forum</a
+                  >News/Press Releases</a
                 >
               </li>
             </ul>
@@ -197,10 +179,7 @@
               ></path>
             </svg>
           </a>
-          <a
-            href="/"
-            class="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400"
-          >
+          <a class="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400">
             <svg viewBox="0 0 30 30" fill="currentColor" class="h-6">
               <circle cx="15" cy="15" r="4"></circle>
               <path
@@ -208,10 +187,7 @@
               ></path>
             </svg>
           </a>
-          <a
-            href="/"
-            class="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400"
-          >
+          <a class="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400">
             <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
               <path
                 d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"
