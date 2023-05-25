@@ -1,30 +1,44 @@
 <template>
   <nav-bar></nav-bar>
-  <component :is="componentName"></component>
-  <!-- 
-  - the entire journey of their food product
-  - including the farm where it was produced
-  - the processing facilities it went through
-  - and the distribution channels it traveled through
-  - The distribution channels it traveled through
-  - The quality checks and inspections it underwent
-  - The estimated delivery time and location
-  - Also include Interactive Maps
-  -->
+  <component
+    :is="componentName"
+    @item-selected="updateTrackingId"
+    :trackingId="trackingId"
+  ></component>
+  <app-footer></app-footer>
 </template>
+
 <script>
 import NavBar from '@/components/AppHeader.vue'
 import SelectItem from '@/components/SelectItem.vue'
+import TrackingInfo from '../components/TrackingInfo.vue'
+import AppFooter from '@/components/AppFooter.vue'
+
 export default {
   name: 'TrackView',
   data() {
     return {
-      componentName: SelectItem
+      trackingId: null
+    }
+  },
+  computed: {
+    componentName() {
+      if (this.trackingId == null) {
+        return SelectItem
+      } else {
+        return TrackingInfo
+      }
     }
   },
   components: {
     SelectItem,
-    NavBar
+    NavBar,
+    AppFooter
+  },
+  methods: {
+    updateTrackingId(trackingId) {
+      this.trackingId = trackingId
+    }
   }
 }
 </script>

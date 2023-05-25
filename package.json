@@ -20,6 +20,7 @@
     "@vee-validate/rules": "^4.8.4",
     "daisyui": "^2.51.5",
     "firebase": "^9.18.0",
+    "mapbox-gl": "^2.15.0",
     "pinia": "^2.0.32",
     "vee-validate": "^4.8.4",
     "vue": "^3.2.47",
