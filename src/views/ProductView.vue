@@ -463,9 +463,9 @@
 
         <ul class="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
           <li>
-            <a href="#" class="block overflow-hidden group">
+            <a class="block overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src="@/assets/images/product/tuna.webp"
                 alt=""
                 class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
               />
@@ -474,22 +474,22 @@
                 <h3
                   class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
                 >
-                  Basic Tee
+                  Tuna
                 </h3>
 
                 <p class="mt-2">
                   <span class="sr-only"> Regular Price </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> $31.5 </span>
                 </p>
               </div>
             </a>
           </li>
 
           <li>
-            <a href="#" class="block overflow-hidden group">
+            <a class="block overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src="@/assets/images/product/organic-beef.webp"
                 alt=""
                 class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
               />
@@ -498,22 +498,22 @@
                 <h3
                   class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
                 >
-                  Basic Tee
+                  Organic Beef
                 </h3>
 
                 <p class="mt-2">
                   <span class="sr-only"> Regular Price </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> $13.19 </span>
                 </p>
               </div>
             </a>
           </li>
 
           <li>
-            <a href="#" class="block overflow-hidden group">
+            <a class="block overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src="@/assets/images/product/squid.webp"
                 alt=""
                 class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
               />
@@ -522,22 +522,22 @@
                 <h3
                   class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
                 >
-                  Basic Tee
+                  Squid
                 </h3>
 
                 <p class="mt-2">
                   <span class="sr-only"> Regular Price </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> $14.2 </span>
                 </p>
               </div>
             </a>
           </li>
 
           <li>
-            <a href="#" class="block overflow-hidden group">
+            <a class="block overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src="@/assets/images/product/organic-milk.webp"
                 alt=""
                 class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
               />
@@ -546,13 +546,13 @@
                 <h3
                   class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
                 >
-                  Basic Tee
+                  Organic Milk
                 </h3>
 
                 <p class="mt-2">
                   <span class="sr-only"> Regular Price </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> $43.36 </span>
                 </p>
               </div>
             </a>
@@ -570,9 +570,9 @@
 
         <ul class="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
           <li>
-            <a href="#" class="block overflow-hidden group">
+            <a class="block overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src="@/assets/images/product/sausages.webp"
                 alt=""
                 class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
               />
@@ -581,22 +581,22 @@
                 <h3
                   class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
                 >
-                  Basic Tee
+                  Sausages
                 </h3>
 
                 <p class="mt-2">
                   <span class="sr-only"> Regular Price </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> $24.6 </span>
                 </p>
               </div>
             </a>
           </li>
 
           <li>
-            <a href="#" class="block overflow-hidden group">
+            <a class="block overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src="@/assets/images/product/sushi.webp"
                 alt=""
                 class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
               />
@@ -605,22 +605,22 @@
                 <h3
                   class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
                 >
-                  Basic Tee
+                  Sushi
                 </h3>
 
                 <p class="mt-2">
                   <span class="sr-only"> Regular Price </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> $25.8 </span>
                 </p>
               </div>
             </a>
           </li>
 
           <li>
-            <a href="#" class="block overflow-hidden group">
+            <a class="block overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src="@/assets/images/product/organic-apple.webp"
                 alt=""
                 class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
               />
@@ -629,22 +629,22 @@
                 <h3
                   class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
                 >
-                  Basic Tee
+                  Organic Apples
                 </h3>
 
                 <p class="mt-2">
                   <span class="sr-only"> Regular Price </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> $1.81 </span>
                 </p>
               </div>
             </a>
           </li>
 
           <li>
-            <a href="#" class="block overflow-hidden group">
+            <a class="block overflow-hidden group">
               <img
-                src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                src="@/assets/images/product/shellfish.webp"
                 alt=""
                 class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
               />
@@ -653,13 +653,13 @@
                 <h3
                   class="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4"
                 >
-                  Basic Tee
+                  Shellfish
                 </h3>
 
                 <p class="mt-2">
                   <span class="sr-only"> Regular Price </span>
 
-                  <span class="tracking-wider text-gray-900"> £24.00 GBP </span>
+                  <span class="tracking-wider text-gray-900"> $22.3 </span>
                 </p>
               </div>
             </a>
