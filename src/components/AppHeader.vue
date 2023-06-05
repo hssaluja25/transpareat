@@ -87,41 +87,9 @@
       <router-link :to="{ name: 'login' }" class="btn">Sign In</router-link>
       <router-link :to="{ name: 'register' }" class="btn btn-secondary">Register</router-link>
     </div>
-    <!-- Search box and profile if user is logged in -->
+    <!-- Show search box, notifications, cart and avatar if user is logged in -->
     <div v-else class="flex items-center justify-end navbar-end space-x-2 sm:space-x-4">
       <div class="flex items-center gap-4">
-        <div class="relative">
-          <label class="sr-only" for="search"> Search </label>
-
-          <input
-            class="h-10 w-full rounded-full border-none bg-white pl-4 pr-10 text-sm shadow-sm sm:w-56"
-            id="search"
-            type="search"
-            placeholder="Search website..."
-          />
-
-          <button
-            type="button"
-            class="absolute top-1/2 right-1 -translate-y-1/2 rounded-full bg-gray-50 p-2 text-gray-600 transition hover:text-gray-700"
-          >
-            <span class="sr-only">Search</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </button>
-        </div>
-
         <a
           class="block shrink-0 rounded-full bg-white p-2.5 text-gray-600 shadow-sm hover:text-gray-700"
         >
@@ -171,7 +139,6 @@
       </a>
     </div>
   </div>
-
   <!-- Sidebar to be shown when the avatar is clicked -->
   <div>
     <div v-if="showSidebar" class="flex h-screen flex-col justify-between bg-white">

@@ -333,15 +333,17 @@
     <h1 class="text-md font-bold text-gray-900 sm:text-3xl mb-3 ml-8">Track Your Meal's Route</h1>
 
     <iframe
+      src="https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d5838255.480668327!2d132.39107056992086!3d38.68818446904488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e0!4m5!1s0x5f9f59209f6c888b%3A0x1c3cc3564fce038f!2sHokkaido%2C%20Japan!3m2!1d43.2203266!2d142.8634737!4m5!1s0x605d1b87f02e57e7%3A0x2e01618b22571b89!2sTokyo%2C%20Japan!3m2!1d35.6761919!2d139.65031059999998!4m5!1s0x6000e6553406e2e1%3A0xc55bc16ee46a2fe7!2sOsaka%2C%20Japan!3m2!1d34.6937249!2d135.5022535!4m5!1s0x355a9908eef34fbb%3A0x7e4ce50cfc1f772!2sHiroshima%2C%20Japan!3m2!1d34.3852894!2d132.45530549999998!5e1!3m2!1sen!2sin!4v1685854777957!5m2!1sen!2sin"
       width="100%"
       height="400px"
-      src="https://api.mapbox.com/styles/v1/hssaluja/cli310z7w007001r180wl6uq8.html?title=false&access_token=pk.eyJ1IjoiaHNzYWx1amEiLCJhIjoiY2xpMzA3YnJvMGIzZzNlbXY1a3phOGJ3cSJ9.mrh0sDDTTIIeYHfmzWxfsQ&zoomwheel=false#11/48.138/11.575"
-      title="Navigation"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
       style="
         border: none;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       "
-      class="rounded-lg"
+      class="rounded-lg mt-9"
     ></iframe>
   </div>
 

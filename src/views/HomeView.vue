@@ -1,5 +1,42 @@
 <template>
   <nav-bar></nav-bar>
+
+  <!-- Search Bar -->
+  <ais-instant-search
+    :search-client="searchClient"
+    index-name="products"
+    class="max-w-2xl mt-3"
+    style="margin-left: auto; margin-right: auto"
+  >
+    <ais-search-box>
+      <template v-slot="{ currentRefinement, refine }">
+        <input
+          class="h-10 rounded-full border-none bg-white pl-4 pr-10 text-sm shadow-sm sm:w-56"
+          id="search"
+          placeholder="Search website..."
+          style="width: 44vw; margin-left: auto; margin-right: auto"
+          :value="currentRefinement"
+          @input="refine($event.currentTarget.value)"
+        />
+      </template>
+    </ais-search-box>
+
+    <ais-state-results>
+      <template v-slot="{ state: { query } }">
+        <ais-hits v-if="query.length > 0">
+          <template v-slot:item="{ item }">
+            <img :src="item.img" :alt="item.name" class="w-1/6 h-1/6 rounded-lg" />
+            <div class="hit-name">
+              <ais-highlight attribute="name" :hit="item"></ais-highlight>
+            </div> </template
+        ></ais-hits>
+        <!-- Show nothing if query is empty -->
+        <div v-else></div>
+      </template>
+    </ais-state-results>
+  </ais-instant-search>
+
+  <!-- Main content -->
   <main>
     <!-- Seafood -->
     <section>
@@ -339,11 +376,18 @@ import NavBar from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
 import { mapState } from 'pinia'
 import useFeaturedStore from '@/stores/featured.js'
+import algoliasearch from 'algoliasearch/lite'
+import 'instantsearch.css/themes/satellite-min.css'
 
 export default {
   name: 'HomeView',
   computed: {
     ...mapState(useFeaturedStore, ['seafood', 'meat', 'organic', 'dairy'])
+  },
+  data() {
+    return {
+      searchClient: algoliasearch('YE7I0P1LSY', '1ef81dc42348f3544d55573aec6237f0')
+    }
   },
   components: {
     NavBar,
@@ -351,3 +395,17 @@ export default {
   }
 }
 </script>
+
+<style>
+.ais-Hits-list {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.ais-Hits-item img {
+  margin-right: 1em;
+}
+.hit-name {
+  margin-bottom: 0.5em;
+}
+</style>

@@ -1,0 +1,296 @@
+[
+    {
+        "img": "images/dairy/butter.webp",
+        "name": "Butter",
+        "price": "1.81",
+        "review": 3.8,
+        "category": "dairy"
+    },
+    {
+        "img": "images/dairy/cheese.webp",
+        "name": "Cheese",
+        "price": "13.19",
+        "review": 4.4,
+        "category": "dairy"
+    },
+    {
+        "img": "images/dairy/organic-milk.webp",
+        "name": "Organic Milk",
+        "price": "43.36",
+        "review": 3.9,
+        "category": "dairy"
+    },
+    {
+        "img": "images/meat-and-poultry/bacon.webp",
+        "name": "Bacon",
+        "price": "34.99",
+        "review": 4.4,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/beef.webp",
+        "name": "Beef",
+        "price": "13.19",
+        "review": 3.8,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/chicken.webp",
+        "name": "Chicken",
+        "price": "33.36",
+        "review": 3.5,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/chicken-breast.webp",
+        "name": "Chicken Breasts",
+        "price": "33.36",
+        "review": 3.5,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/duck.webp",
+        "name": "Duck",
+        "price": "16.98",
+        "review": 4.4,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/ground-beef.webp",
+        "name": "Ground Beef",
+        "price": "40.66",
+        "review": 3.8,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/ground-pork.webp",
+        "name": "Ground Pork",
+        "price": "34.75",
+        "review": 4.9,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/ground-turkey.webp",
+        "name": "Ground Turkey",
+        "price": "30.24",
+        "review": 4.0,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/ham.webp",
+        "name": "Ham",
+        "price": "27.64",
+        "review": 3.8,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/lamb.webp",
+        "name": "Lamb",
+        "price": "35.4",
+        "review": 3.5,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/pork.webp",
+        "name": "Pork",
+        "price": "19.4",
+        "review": 4.4,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/sausages.webp",
+        "name": "Sausages",
+        "price": "24.6",
+        "review": 4.9,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/steak.webp",
+        "name": "Steak",
+        "price": "22.3",
+        "review": 3.8,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/turkey.webp",
+        "name": "Turkey",
+        "price": "14.2",
+        "review": 3.5,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/meat-and-poultry/veal.webp",
+        "name": "Veal",
+        "price": "25.8",
+        "review": 4.0,
+        "category": "meat-and-poultry"
+    },
+    {
+        "img": "images/organic/organic-apple.webp",
+        "name": "Organic Apples",
+        "price": "1.81",
+        "review": 3.5,
+        "category": "organic"
+    },
+    {
+        "img": "images/organic/organic-beef.webp",
+        "name": "Organic Beef",
+        "price": "13.19",
+        "review": 4.4,
+        "category": "organic"
+    },
+    {
+        "img": "images/organic/organic-coffee.webp",
+        "name": "Organic Coffee",
+        "price": "43.36",
+        "review": 4.9,
+        "category": "organic"
+    },
+    {
+        "img": "images/organic/organic-eggs.webp",
+        "name": "Organic Eggs",
+        "price": "3.29",
+        "review": 3.5,
+        "category": "organic"
+    },
+    {
+        "img": "images/organic/organic-milk.webp",
+        "name": "Organic Milk",
+        "price": "4.66",
+        "review": 4.4,
+        "category": "organic"
+    },
+    {
+        "img": "images/organic/organic-quinoa.webp",
+        "name": "Organic Quinoa",
+        "price": "5.75",
+        "review": 4.9,
+        "category": "organic"
+    },
+    {
+        "img": "images/organic/organic-spinach.webp",
+        "name": "Organic Spinach",
+        "price": "3.24",
+        "review": 3.5,
+        "category": "organic"
+    },
+    {
+        "img": "images/organic/organic-strawberries.webp",
+        "name": "Organic Strawberries",
+        "price": "4.64",
+        "review": 4.4,
+        "category": "organic"
+    },
+    {
+        "img": "images/organic/organic-tomato.webp",
+        "name": "Organic Tomatoes",
+        "price": "2.12",
+        "review": 4.4,
+        "category": "organic"
+    },
+    {
+        "img": "images/seafood/anchovies.webp",
+        "name": "Anchovies",
+        "price": "34.99",
+        "review": 3.9,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/caviar.webp",
+        "name": "Caviar",
+        "price": "13.19",
+        "review": 4.2,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/clams.webp",
+        "name": "Clams",
+        "price": "33.36",
+        "review": 3.8,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/crab.webp",
+        "name": "Crabs",
+        "price": "16.98",
+        "review": 3.5,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/lobster.webp",
+        "name": "Lobster",
+        "price": "40.66",
+        "review": 4.4,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/mussels.webp",
+        "name": "Mussels",
+        "price": "34.75",
+        "review": 4.0,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/octopus.webp",
+        "name": "Octopus",
+        "price": "30.24",
+        "review": 3.8,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/oyster.webp",
+        "name": "Oyster",
+        "price": "27.64",
+        "review": 4.9,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/salmon.webp",
+        "name": "Salmon",
+        "price": "35.4",
+        "review": 3.5,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/Sardines.webp",
+        "name": "Sardines",
+        "price": "19.4",
+        "review": 4.4,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/scallops.webp",
+        "name": "Scallops",
+        "price": "24.6",
+        "review": 3.8,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/shellfish.webp",
+        "name": "Shellfish",
+        "price": "22.3",
+        "review": 4.0,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/squid.webp",
+        "name": "Squid",
+        "price": "14.2",
+        "review": 3.8,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/sushi.webp",
+        "name": "Sushi",
+        "price": "25.8",
+        "review": 3.5,
+        "category": "seafood"
+    },
+    {
+        "img": "images/seafood/tuna.webp",
+        "name": "Tuna",
+        "price": "26.8",
+        "review": 4.4,
+        "category": "seafood"
+    }
+]

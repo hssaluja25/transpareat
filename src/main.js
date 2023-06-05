@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import VeeValidatePlugin from './includes/validation.js'
 import '@/assets/base.css'
+import InstantSearch from 'vue-instantsearch/vue3/es';
 import App from './App.vue'
 import { auth } from '@/includes/firebase.config.js'
 import router from './router'
@@ -18,6 +19,7 @@ auth.onAuthStateChanged(() => {
         app.use(VeeValidatePlugin)
         app.use(createPinia())
         app.use(router)
+        app.use(InstantSearch);
         app.mount('#app')
     }
 })
