@@ -120,9 +120,39 @@
         >
           <font-awesome-icon :icon="['fas', 'cart-shopping']" />
         </label>
-        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a>Item 1</a></li>
-          <li><a>Item 2</a></li>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-96">
+          <li>
+            <router-link
+              :to="{ name: 'cart' }"
+              style="display: flex; justify-content: space-between"
+            >
+              <span>Lobster</span>
+              <img
+                src="images/seafood/lobster.webp"
+                width="100"
+                height="100"
+                style="float: right"
+              />
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              :to="{ name: 'cart' }"
+              style="display: flex; justify-content: space-between"
+            >
+              <span> Organic Eggs</span>
+              <img src="images/organic/organic-eggs.webp" width="100" height="100" />
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              :to="{ name: 'cart' }"
+              style="display: flex; justify-content: space-between"
+            >
+              <span> Veal</span>
+              <img src="images/meat-and-poultry/veal.webp" width="100" height="100" />
+            </router-link>
+          </li>
           <li>
             <router-link :to="{ name: 'cart' }"> Go to cart</router-link>
           </li>
