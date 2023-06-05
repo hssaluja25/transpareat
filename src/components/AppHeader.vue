@@ -40,8 +40,8 @@
               </svg>
             </a>
             <ul class="p-2 z-10 bg-white">
-              <li><a>Case Studies</a></li>
-              <li><div>Sustainability</div></li>
+              <li><router-link :to="{ name: 'about' }">Sustainability</router-link></li>
+              <li v-if="loggedIn" @click="signOut"><div>Log Out</div></li>
             </ul>
           </li>
         </ul>
@@ -75,8 +75,8 @@
             </svg>
           </a>
           <ul class="p-2 z-10 bg-white">
-            <li><a>Case Studies</a></li>
-            <li><div>Sustainability</div></li>
+            <li><router-link :to="{ name: 'about' }">Sustainability</router-link></li>
+            <li v-if="loggedIn" @click="signOut"><div>Log Out</div></li>
           </ul>
         </li>
       </ul>
@@ -407,6 +407,7 @@ export default {
   methods: {
     ...mapActions(useUserStore, ['signOutUser']),
     async signOut() {
+      this.showSidebar = false
       await this.signOutUser()
       this.loggedIn = false
     }
