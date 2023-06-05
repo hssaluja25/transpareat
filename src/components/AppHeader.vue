@@ -128,7 +128,7 @@
             >
               <span>Lobster</span>
               <img
-                src="images/seafood/lobster.webp"
+                src="@/assets/images/cart/lobster.webp"
                 width="100"
                 height="100"
                 style="float: right"
@@ -141,7 +141,7 @@
               style="display: flex; justify-content: space-between"
             >
               <span> Organic Eggs</span>
-              <img src="images/organic/organic-eggs.webp" width="100" height="100" />
+              <img src="@/assets/images/cart/organic-eggs.webp" width="100" height="100" />
             </router-link>
           </li>
           <li>
@@ -150,7 +150,7 @@
               style="display: flex; justify-content: space-between"
             >
               <span> Veal</span>
-              <img src="images/meat-and-poultry/veal.webp" width="100" height="100" />
+              <img src="@/assets/images/cart/veal.webp" width="100" height="100" />
             </router-link>
           </li>
           <li>

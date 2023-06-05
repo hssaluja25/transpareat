@@ -12,7 +12,7 @@
           v-if="showLobster"
         >
           <img
-            src="images/seafood/lobster.webp"
+            src="@/assets/images/cart/lobster.webp"
             alt="product-image"
             class="w-full rounded-lg sm:w-40"
           />
@@ -66,7 +66,7 @@
           v-if="showEggs"
         >
           <img
-            src="images/organic/organic-eggs.webp"
+            src="@/assets/images/cart/organic-eggs.webp"
             alt="product-image"
             class="w-full rounded-lg sm:w-40"
           />
@@ -119,7 +119,7 @@
           v-if="showVeal"
         >
           <img
-            src="images/meat-and-poultry/veal.webp"
+            src="@/assets/images/cart/veal.webp"
             alt="product-image"
             class="w-full rounded-lg sm:w-40"
           />
