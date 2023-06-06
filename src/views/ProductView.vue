@@ -183,7 +183,7 @@
                   <div class="stat-actions">
                     <!-- The button to open modal -->
                     <label for="my-modal" class="btn btn-sm">More info</label>
-                    <button class="ml-3 btn btn-sm">About the Farmer</button>
+                    <button type="button" class="ml-3 btn btn-sm">About the Farmer</button>
                   </div>
                 </div>
               </div>
