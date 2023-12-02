@@ -7,15 +7,8 @@
       <!-- Left section containing items -->
       <div class="rounded-lg md:w-2/3">
         <!-- Card1 -->
-        <div
-          class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start"
-          v-if="showLobster"
-        >
-          <img
-            src="@/assets/images/cart/lobster.webp"
-            alt="product-image"
-            class="w-full rounded-lg sm:w-40"
-          />
+        <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start" v-if="showLobster">
+          <img src="@/assets/images/cart/lobster.webp" alt="product-image" class="w-full rounded-lg sm:w-40" />
           <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
             <div class="mt-5 sm:mt-0">
               <h2 class="text-lg font-bold text-gray-900">Lobster</h2>
@@ -25,35 +18,23 @@
               <div class="flex items-center border-gray-100">
                 <span
                   class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
-                  @click="reduceLobster"
-                >
+                  @click="reduceLobster">
                   -
                 </span>
                 <!-- Value is the value that the user entered -->
-                <input
-                  class="h-8 w-16 border bg-white text-center text-xs outline-none"
-                  type="number"
-                  v-model="lobsterQuantity"
-                  min="1"
-                />
+                <input class="h-8 w-16 border bg-white text-center text-xs outline-none" type="number"
+                  v-model="lobsterQuantity" min="1" />
                 <span
                   class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
-                  @click="lobsterQuantity += 1"
-                >
+                  @click="lobsterQuantity += 1">
                   +
                 </span>
               </div>
               <div class="flex items-center space-x-4">
                 <p class="text-sm">${{ lobsterPrice }}</p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
-                  @click="deleteLobster"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
+                  @click="deleteLobster">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </div>
@@ -61,15 +42,8 @@
           </div>
         </div>
         <!-- Card2 -->
-        <div
-          class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start"
-          v-if="showEggs"
-        >
-          <img
-            src="@/assets/images/cart/organic-eggs.webp"
-            alt="product-image"
-            class="w-full rounded-lg sm:w-40"
-          />
+        <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start" v-if="showEggs">
+          <img src="@/assets/images/cart/organic-eggs.webp" alt="product-image" class="w-full rounded-lg sm:w-40" />
           <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
             <div class="mt-5 sm:mt-0">
               <h2 class="text-lg font-bold text-gray-900">Organic Eggs</h2>
@@ -79,34 +53,22 @@
               <div class="flex items-center border-gray-100">
                 <span
                   class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
-                  @click="reduceEggs"
-                >
+                  @click="reduceEggs">
                   -
                 </span>
-                <input
-                  class="h-8 w-16 border bg-white text-center text-xs outline-none"
-                  type="number"
-                  v-model="eggsQuantity"
-                  min="1"
-                />
+                <input class="h-8 w-16 border bg-white text-center text-xs outline-none" type="number"
+                  v-model="eggsQuantity" min="1" />
                 <span
                   class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
-                  @click="eggsQuantity += 1"
-                >
+                  @click="eggsQuantity += 1">
                   +
                 </span>
               </div>
               <div class="flex items-center space-x-4">
                 <p class="text-sm">${{ eggsPrice }}</p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
-                  @click="deleteEggs"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
+                  @click="deleteEggs">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </div>
@@ -114,15 +76,8 @@
           </div>
         </div>
         <!-- Card3 -->
-        <div
-          class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start"
-          v-if="showVeal"
-        >
-          <img
-            src="@/assets/images/cart/veal.webp"
-            alt="product-image"
-            class="w-full rounded-lg sm:w-40"
-          />
+        <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md sm:flex sm:justify-start" v-if="showVeal">
+          <img src="@/assets/images/cart/veal.webp" alt="product-image" class="w-full rounded-lg sm:w-40" />
           <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
             <div class="mt-5 sm:mt-0">
               <h2 class="text-lg font-bold text-gray-900">Veal</h2>
@@ -132,34 +87,22 @@
               <div class="flex items-center border-gray-100">
                 <span
                   class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"
-                  @click="reduceVeal"
-                >
+                  @click="reduceVeal">
                   -
                 </span>
-                <input
-                  class="h-8 w-16 border bg-white text-center text-xs outline-none"
-                  type="number"
-                  v-model="vealQuantity"
-                  min="1"
-                />
+                <input class="h-8 w-16 border bg-white text-center text-xs outline-none" type="number"
+                  v-model="vealQuantity" min="1" />
                 <span
                   class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"
-                  @click="vealQuantity += 1"
-                >
+                  @click="vealQuantity += 1">
                   +
                 </span>
               </div>
               <div class="flex items-center space-x-4">
                 <p class="text-sm">${{ vealPrice }}</p>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
-                  @click="deleteVeal"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500"
+                  @click="deleteVeal">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </div>
@@ -184,21 +127,11 @@
             <p class="mb-1 text-lg text-right font-bold">${{ total }}</p>
             <div class="flex justify-end">
               <span
-                class="inline-flex items-center justify-center rounded-full bg-indigo-100 px-2.5 py-0.5 text-indigo-700"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="-ms-1 me-1.5 h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"
-                  />
+                class="inline-flex items-center justify-center rounded-full bg-indigo-100 px-2.5 py-0.5 text-indigo-700">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="-ms-1 me-1.5 h-4 w-4">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z" />
                 </svg>
 
                 <p class="whitespace-nowrap text-xs">2 Discounts Applied</p>
@@ -207,9 +140,7 @@
           </div>
         </div>
 
-        <button
-          class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600"
-        >
+        <button class="mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">
           Check out
         </button>
       </div>
@@ -285,13 +216,13 @@ export default {
   },
   methods: {
     deleteLobster() {
-      ;(this.showLobster = false), (this.lobsterQuantity = 0)
+      ; (this.showLobster = false), (this.lobsterQuantity = 0)
     },
     deleteEggs() {
-      ;(this.showEggs = false), (this.eggsQuantity = 0)
+      ; (this.showEggs = false), (this.eggsQuantity = 0)
     },
     deleteVeal() {
-      ;(this.showVeal = false), (this.vealQuantity = 0)
+      ; (this.showVeal = false), (this.vealQuantity = 0)
     },
     reduceLobster() {
       if (this.lobsterQuantity > 1) {

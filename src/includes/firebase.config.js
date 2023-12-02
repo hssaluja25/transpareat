@@ -14,13 +14,12 @@ const firebaseConfig = {
     appId: "1:293562259434:web:4cb8038789e4befd890493",
     measurementId: "G-CEFQTM1MC5"
 };
-// const app = firebase.initializeApp(firebaseConfig)
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth()
+// 👇 Required for sign in with google
 const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
-
 export {
     auth, provider, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, db, getDoc, doc, setDoc, deleteUser, signOut
 }

@@ -350,7 +350,7 @@ import useRoleStore from '@/stores/role.js'
 import { addToFirestore } from '@/includes/firestore.js'
 
 export default {
-  name: 'LoginView',
+  name: 'RegistrationView',
   data() {
     return {
       // Whether to show the password in the password field

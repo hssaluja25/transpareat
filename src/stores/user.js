@@ -5,7 +5,6 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signInWithPopup,
-    GoogleAuthProvider,
     signOut
 } from '@/includes/firebase.config.js'
 
@@ -17,7 +16,7 @@ export default defineStore('user', {
         async continueWithGoogle() {
             const userCred = await signInWithPopup(auth, provider)
             const docId = userCred.user.uid
-            GoogleAuthProvider.credentialFromResult(userCred)
+            // I have removed this line because it is only needed when you making API calls with GCP
             return docId
         },
         async createUserWithEmail(values) {

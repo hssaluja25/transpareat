@@ -158,13 +158,13 @@
 
                 <button
                   class="block rounded bg-green-600 px-5 py-3 text-xs font-medium text-white hover:bg-green-500"
-                  @click.prevent="runChecks('buy')"
+                  @click.prevent="runChecks()"
                 >
                   Buy Now
                 </button>
                 <button
                   class="block rounded bg-blue-600 px-5 py-3 text-xs font-medium text-white hover:bg-blue-500"
-                  @click.prevent="runChecks('cart')"
+                  @click.prevent="runChecks()"
                 >
                   Add to Cart
                 </button>
@@ -870,31 +870,31 @@ export default {
       const hey = timeSince(new Date(d - aDay))
       return hey
     },
-    async runChecks(intent) {
+    async runChecks() {
       if (this.loggedIn) {
         if (this.quantitySelected) {
-          if (intent === 'buy') {
-            try {
-              // Instead of this the stripe page should open so i need to make a post request to it. However, if i make a post request (using fetch), will the stripe page open? I was thinking that only the data would be posted and a new webpage won't open
-              const response = await fetch('https://transpareat-server.onrender.com/checkout', {
-                method: 'POST',
-                body: JSON.stringify({
-                  name: this.name,
-                  price: this.price,
-                  img: this.img[0],
-                  quantity: this.quantity
-                }),
-                headers: {
-                  'Content-type': 'application/json; charset=UTF-8'
-                }
-              })
-              const body = await response.json()
-              window.location.href = body.url
-            } catch (e) {
-              console.log(`Error from server: ${e}`)
-            }
-          } else if (intent === 'cart') {
-            console.log('Added to cart')
+          try {
+            const response = await fetch('https://transpareat-server.onrender.com/checkout', {
+              method: 'POST',
+              body: JSON.stringify({
+                name: this.name,
+                price: this.price,
+                img: this.img[0],
+                quantity: this.quantity
+              }),
+              headers: {
+                // This was application/json before and also had character set set to UTF-8
+                'Content-type': 'text/json'
+              }
+            })
+            // If you get a json SyntaxError: JSON.parse: unexpected non-whitespace character after JSON data at line 1 column 5 of the JSON data.
+            // It is due the the following line. Not the line above.
+            // The problem is in the server. Not here. Because the response.body is returning something called ReadableStream
+            console.log(response)
+            // const body = await response.json()
+            // window.location.href = body.url
+          } catch (e) {
+            console.log(`Error from server: ${e}`)
           }
         } else {
           // Tell the user to select unit
